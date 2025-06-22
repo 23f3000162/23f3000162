@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>View/Delete Parking Spot</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f7f7f7;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .container {
+      width: 300px;
+      border: 2px solid #333;
+      border-radius: 12px;
+      background-color: white;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+    }
+
+    .header {
+      background-color: #f9d97c;
+      text-align: center;
+      padding: 10px;
+      font-weight: bold;
+      font-size: 16px;
+      border-bottom: 1px solid #ccc;
+    }
+
+    .content {
+      padding: 15px;
+    }
+
+    .content label {
+      display: block;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+
+    .content input {
+      width: 100%;
+      padding: 5px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    .buttons {
+      margin-top: 20px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .buttons button {
+      width: 45%;
+      padding: 8px;
+      border: none;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .delete-btn {
+      background-color: #4285f4;
+      color: white;
+    }
+
+    .close-btn {
+      background-color: #aad4ff;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="header">
+      View/Delete Parking Spot
+    </div>
+
+    <div class="content">
+
+      <label for="spotId">ID :</label>
+      <input type="text" id="spotId" value="1" readonly>
+
+      <label for="status">Status :</label>
+      <input type="text" id="status" onclick="window.location.href = '/accuied';" value="O/A" readonly>
+
+      <!-- Additional fields can go here -->
+
+      <div class="buttons">
+        <button class="delete-btn">Delete</button>
+        <button class="close-btn" onclick="window.location.href = '/admin_dashboard';">Close</button>
+      </div>
+
+    </div>
+  </div>
+
+</body>
+</html>
