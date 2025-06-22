@@ -4,7 +4,7 @@
 # from datetime import datetime
 
 
-
+# this is my models.py file for the Flask application using SQLAlchemy ORM
 
 # Base = declarative_base()
 
