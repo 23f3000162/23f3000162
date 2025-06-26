@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Occupied Parking Spot Details</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f7f7f7;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      width: 340px;
+      border: 2px solid #333;
+      border-radius: 12px;
+      background-color: white;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+    }
+
+    .header {
+      background-color: #f9d97c;
+      text-align: center;
+      padding: 10px;
+      font-weight: bold;
+      font-size: 16px;
+      border-bottom: 1px solid #ccc;
+    }
+
+    .content {
+      padding: 15px;
+    }
+
+    label {
+      display: block;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+
+    input[type="text"] {
+      width: 100%;
+      padding: 5px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    .button-container {
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    .close-button {
+      padding: 8px 20px;
+      border: none;
+      border-radius: 6px;
+      font-weight: bold;
+      background-color: #aad4ff;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="header">Occupied Parking Spot Details</div>
+
+    <div class="content">
+      <label>ID :</label>
+      <input type="text" value="1" readonly>
+
+      <label>Customer ID :</label>
+      <input type="text" value="xxxxx" readonly>
+
+      <label>Vehicle number :</label>
+      <input type="text" value="xxxxx" readonly>
+
+      <label>Date/time of parking :</label>
+      <input type="text" value="xx/xx/xxxx" readonly>
+
+      <label>Est. parking cost :</label>
+      <input type="text" value="xxxxx" readonly>
+
+      <div class="button-container">
+        <button class="close-button" onclick="window.location.href = '/edit_delete_parking_spot';">Close</button>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>User Signup</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #ffffff;
+    }
+
+    .container {
+      border: 2px solid black;
+      border-radius: 15px;
+      padding: 30px;
+      width: 320px;
+      font-family: Arial, sans-serif;
+    }
+
+    h2 {
+      text-align: center;
+      color: purple;
+      margin-top: 0;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 8px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      margin-bottom: 10px;
+      box-sizing: border-box;
+    }
+
+    textarea {
+      height: 60px;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      background-color: #6ec6ff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    p {
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    a {
+      color: orange;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  
+
+  <div class="container">
+    <h2>User Signup</h2>
+
+    <form action="/signup" method="POST">
+      <label>Email ID (Username):</label>
+      <input type="email" required name="username">
+
+      <label>Password:</label>
+      <input type="password" required name="password">
+
+      <label>Fullname:</label>
+      <input type="text" required name="fullname"> 
+
+      <label>Phone Number:</label>
+      <input type="text" required name="phone">
+
+      <label>Address:</label>
+      <textarea required name="address"></textarea>
+
+      <label>Pin Code:</label>
+      <input type="text" required name="pincode">
+
+      <button type="submit">Register</button>
+    </form>
+
+    <p>
+      <a href="./login">Login here!</a>
+    </p>
+  </div>
+
+</body>
+</html>

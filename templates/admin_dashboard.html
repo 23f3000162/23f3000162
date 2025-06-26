@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Admin Dashboard</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: white;
+    }
+
+    .header {
+      background-color: #c7eac7;
+      padding: 10px;
+      border-bottom: 2px solid #ccc;
+    }
+
+    .header span {
+      margin-right: 20px;
+    }
+
+    .welcome-text {
+      color: orange;
+      font-weight: bold;
+    }
+
+    .menu {
+      margin-left: 50px;
+    }
+
+    .edit-profile {
+      float: right;
+      color: green;
+    }
+
+    .edit-profile a {
+      text-decoration: none;
+      color: green;
+    }
+
+    h2 {
+      text-align: center;
+      color: #3a6cc8;
+      margin: 20px 0;
+    }
+
+    .lots-container {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      padding: 10px;
+    }
+
+    .lot-card {
+      border: 2px solid #aaa;
+      border-radius: 10px;
+      padding: 10px;
+      width: 150px;
+    }
+
+    .lot-card a {
+      font-size: small;
+    }
+
+    .occupied-status {
+      color: green;
+      font-size: small;
+    }
+
+    .spot-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 20px);
+      gap: 5px;
+      justify-content: center;
+      margin-top: 10px;
+    }
+
+    .spot {
+      width: 20px;
+      height: 20px;
+      text-align: center;
+      line-height: 20px;
+    }
+
+    .pink { background-color: pink; }
+    .blue { background-color: lightblue; }
+    .green { background-color: lightgreen; }
+
+    .add-button-container {
+      text-align: center;
+      margin: 30px;
+    }
+
+    .add-button {
+      padding: 10px 20px;
+      border: 2px solid orange;
+      border-radius: 5px;
+      background-color: #f0f8ff;
+      color: orange;
+      font-weight: bold;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <div class="header">
+    <span class="welcome-text">Welcome to Admin</span>
+    <span class="menu">
+  <a href="/admin_dashboard">Home</a> |
+  <a href="/admin_users">Users</a> |
+  <a href="/admin_search">Search</a> |
+  <a href="/admin_summery">Summary</a> |
+  <a href="/login">Logout</a>
+</span>
+
+    <span class="edit-profile"><a href="/edit_parkinglot">Edit Profile</a></span>
+  </div>
+
+  <!-- Page Title -->
+  <h2>Parking Lots</h2>
+
+  <!-- Parking Lots Container -->
+  <div class="lots-container">
+
+    <!-- Parking Lot 1 -->
+    <!-- <div class="lot-card"> -->
+      {% if parking_lots %}
+        {% for lot in parking_lots %}
+        <div class="lot-card">
+          <b>{{ lot.prime_location_name }}</b> <br>
+          <a href="/edit_parkinglot/{{ lot.id }}">Edit</a> | <a href="/delete_parking_lots/{{ lot.id }}">Delete</a>
+          <p class="occupied-status">(Occupied : {{ lot.occupied }}/{{ lot.total }})</p>
+          <div class="spot-grid">
+            {% for spot in lot.spots %}
+              <div class="spot {{ spot.color }}" onclick="window.location.href = '/edit_delete_parking_spot/{{ spot.id }}';">{{ spot.label }}</div>
+            {% endfor %}
+          </div>
+        </div>
+        {% endfor %}
+      {% else %}
+        <p>No parking lots available.</p>
+      {% endif %}
+      
+    
+    
+  </div>
+
+
+  <!-- Add Lot Button -->
+  <div class="add-button-container">
+  <a href="/new_parking_lot" class="add-button">+ Add Lot</a>
+</div>
+
+
+</body>
+</html>
